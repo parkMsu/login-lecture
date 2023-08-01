@@ -23,6 +23,9 @@
 //모듈
 const express = require("express");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");   //어떤 OS에서 개발하더라도 동일하게 환경변수 등록 가능
+dotenv.config();
+
 const app =express();
 
 //라우팅

@@ -23,10 +23,8 @@
 //모듈
 const express = require("express");
 const bodyParser = require("body-parser");
-const dotenv = require("dotenv");   //어떤 OS에서 개발하더라도 동일하게 환경변수 등록 가능
 // const morgan = require("morgan");
-
-
+const dotenv = require("dotenv");   //어떤 OS에서 개발하더라도 동일하게 환경변수 등록 가능
 
 const app =express();
 dotenv.config();        //env에 자동적으로 접근할 수 있도록 등록해줌
@@ -45,7 +43,7 @@ app.use(bodyParser.json());
 //URL을 통해 전달되는 데이터에 한글, 공백들과 같은 문자가 포함될 경우 제대로 인식되지 않는 문제 해결
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(morgan("dev"));
-// app.use(morgan("common", {stream: accessLogStream }));
+// app.use(morgan("tiny", {stream: logger.stream }));
 app.use("/", home); // use -> 미들웨어를 등록해주는 메서드
 
 module.exports = app;

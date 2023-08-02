@@ -51,4 +51,9 @@ if(process.env.NODE_ENV !== "production"){
     //개발할때 console로 log 확인..
     logger.add(opts.console);
 }
+
+logger.stream = {
+    write: (message) => logger.info(message),
+}
+
 module.exports = logger;

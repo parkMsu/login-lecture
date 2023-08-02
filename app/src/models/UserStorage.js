@@ -14,8 +14,8 @@ class UserStorage{
                                                     //id가 ?에 들어감
             db.query(query,[id], (err, data) =>{
                 if(err) reject(`${err}`); //실패하면 reject로 에러 던짐 `${err}` 은 문자열
-                resolve(data[0]);      //성공시 resolve로 데이터 던짐
-                console.log(data);
+                else resolve(data[0]);      //성공시 resolve로 데이터 던짐
+
             });
         })
     }
@@ -29,7 +29,7 @@ class UserStorage{
                 [userInfo.id, userInfo.name, userInfo.psword],
                  (err) =>{
                     if(err) reject(`${err}`); //실패하면 reject로 에러
-                    resolve({success : true});      //성공시 resolve로 오브젝트 던짐
+                    else resolve({success : true});      //성공시 resolve로 오브젝트 던짐
             });
         })
     }

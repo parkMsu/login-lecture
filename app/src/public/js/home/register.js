@@ -34,6 +34,7 @@ function register(){
             location.href ="/login";
         }else{
             // 상단에 메시지 띄움
+            if(res.err) return alert(res.err);
             alert(res.msg);
         }
     })
